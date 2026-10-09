@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>সাফা খোরমা | বিশেষ অফার</title>
+  <meta name="description" content="সাফা খোরমা ও অন্যান্য পণ্য অর্ডার করুন সহজেই।">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #168044;
+      --dark-green: #105c31;
+      --light-green: #edf8ef;
+      --blue: #0756b5;
+      --text: #24352a;
+      --muted: #69766d;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background: #f8fbf8;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* উপরের নীল অফার ব্যানার */
+
+    .offer-banner {
+      background: var(--blue);
+      color: white;
+      text-align: center;
+      padding: 12px 15px;
+    }
+
+    .offer-banner strong {
+      display: block;
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .offer-banner p {
+      font-size: 15px;
+      margin-top: 2px;
+    }
+
+    .offer-banner a {
+      display: inline-block;
+      background: white;
+      color: var(--blue);
+      font-weight: 700;
+      padding: 5px 19px;
+      border-radius: 6px;
+      margin-top: 7px;
+    }
+
+    /* Header */
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e7eee8;
+      padding: 14px 5%;
+    }
+
+    .header-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 700;
+      color: var(--dark-green);
+    }
+
+    .header-order {
+      background: var(--green);
+      color: white;
+      padding: 9px 18px;
+      border-radius: 7px;
+      font-weight: 600;
+    }
+
+    /* Main product */
+
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .main-image-box {
+      background: white;
+      border: 1px solid #e8efe9;
+      border-radius: 18px;
+      padding: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 390px;
+    }
+
+    /* সিরাপের বোতলের জন্য লম্বা ছবি */
+
+    .main-product-image {
+      width: 100%;
+      max-width: 240px;
+      height: 350px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #dff4e4;
+      color: var(--dark-green);
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: 37px;
+      line-height: 1.35;
+      color: var(--dark-green);
+      margin-bottom: 12px;
+    }
+
+    .hero-description {
+      color: var(--muted);
+      margin-bottom: 15px;
+      font-size: 17px;
+    }
+
+    .price-box {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .old-price {
+      color: #888;
+      text-decoration: line-through;
+      font-size: 20px;
+    }
+
+    .new-price {
+      color: var(--green);
+      font-size: 34px;
+      font-weight: 700;
+    }
+
+    .hero-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 25px;
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: var(--dark-green);
+    }
+
+    /* সাধারণ Section */
+
+    .section {
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      color: var(--dark-green);
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin: 0 auto 28px;
+      max-width: 600px;
+    }
+
+    /* Products */
+
+    .products-section {
+      background: var(--light-green);
+    }
+
+    .products-grid {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid #e4ece5;
+      border-radius: 13px;
+      padding: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px #123d2408;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: contain;
+      background: #fbfdfb;
+      border-radius: 9px;
+      margin-bottom: 15px;
+    }
+
+    .product-card h3 {
+      font-size: 21px;
+      color: var(--dark-green);
+      margin-bottom: 5px;
+    }
+
+    .product-card p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .product-price {
+      color: var(--green);
+      font-size: 25px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .product-card .button {
+      width: 100%;
+      padding: 10px;
+    }
+
+    /* Features */
+
+    .features {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 22px 15px;
+      border: 1px solid #e7eee8;
+      border-radius: 12px;
+      background: white;
+    }
+
+    .feature h3 {
+      color: var(--dark-green);
+      margin-bottom: 6px;
+      font-size: 20px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Order form */
+
+    .order-section {
+      background: #eaf5eb;
+    }
+
+    .order-form {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px #0000000a;
+    }
+
+    .order-form label {
+      display: block;
+      margin: 12px 0 5px;
+      font-weight: 600;
+    }
+
+    .order-form input,
+    .order-form textarea,
+    .order-form select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d4dfd5;
+      border-radius: 7px;
+      font-family: inherit;
+      font-size: 16px;
+      background: white;
+    }
+
+    .order-form textarea {
+      min-height: 85px;
+      resize: vertical;
+    }
+
+    .order-form button {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .form-note {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 15px;
+      background: #123d24;
+      color: white;
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .offer-banner strong {
+        font-size: 18px;
+      }
+
+      .offer-banner p {
+        font-size: 13px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 25px 16px;
+      }
+
+      .main-image-box {
+        min-height: 320px;
+      }
+
+      .main-product-image {
+        height: 300px;
+        max-width: 210px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .product-card {
+        padding: 10px;
+      }
+
+      .product-card img {
+        height: 210px;
+      }
+
+      .product-card h3 {
+        font-size: 17px;
+      }
+
+      .product-card p {
+        font-size: 13px;
+      }
+
+      .product-price {
+        font-size: 21px;
+      }
+
+      .product-card .button {
+        font-size: 14px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 25px;
+      }
+
+      .order-form {
+        padding: 18px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-card img {
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- নীল অফার ব্যানার -->
+  <div class="offer-banner">
+    <strong>🔵 সীমিত সময়ের বিশেষ অফার! 🔥</strong>
+    <p>🌿 সাশ্রয়ী মূল্যে আপনার পছন্দের পণ্য</p>
+    <a href="#products">🛒 আজই অর্ডার করুন!</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="logo">সাফা খোরমা</a>
+      <a href="#order" class="header-order">অর্ডার করুন</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Main product -->
+    <section class="hero">
+      <div class="main-image-box">
+        <img
+          class="main-product-image"
+          src="product.jpg"
+          alt="সাফা খোরমা পণ্যের ছবি"
+          onerror="this.onerror=null;this.src='images/product-placeholder.svg';"
+        >
+      </div>
+
+      <div>
+        <span class="tag">বিশেষ অফার</span>
+        <h1>সাফা খোরমা</h1>
+
+        <p class="hero-description">
+          আপনার পছন্দের পণ্যটি সহজেই অর্ডার করুন।
+          অর্ডারের আগে পণ্যের বিবরণ ও মূল্য ভালোভাবে দেখে নিন।
+        </p>
+
+        <div class="price-box">
+          <span class="old-price">৳৯০০</span>
+          <span class="new-price">৳৭৯০</span>
+        </div>
+
+        <a class="button" href="#order">এখনই অর্ডার করুন</a>
+
+        <p class="hero-note">
+          ডেলিভারি চার্জ ও অন্যান্য তথ্য অর্ডার নিশ্চিত করার সময় জেনে নিন।
+        </p>
+      </div>
+    </section>
+
+    <!-- Products list -->
+    <section class="section products-section" id="products">
+      <h2 class="section-title">আমাদের অন্যান্য পণ্য</h2>
+      <p class="section-subtitle">
+        আপনার পছন্দের পণ্য বেছে নিন এবং অর্ডার করতে বাটনে চাপ দিন।
+      </p>
+
+      <div class="products-grid">
+
+        <!-- Product 1 -->
+        <article class="product-card">
+          <img
+            src="product.jpg"
+            alt="সাফা খোরমা"
+            onerror="this.onerror=null;this.src='images/product-placeholder.svg';"
+          >
+          <h3>সাফা খোরমা</h3>
+          <p>পণ্যের বিস্তারিত তথ্য এখানে যোগ করুন।</p>
+          <div class="product-price">৳৭৯০</div>
+          <a class="button" href="#order" data-product="সাফা খোরমা">অর্ডার করুন</a>
+        </article>
+
+        <!-- Product 2: নিজের পণ্য অনুযায়ী পরিবর্তন করবে -->
+        <article class="product-card">
+          <img
+            src="images/product-placeholder.svg"
+            alt="দ্বিতীয় পণ্য"
+          >
+          <h3>আপনার দ্বিতীয় পণ্য</h3>
+          <p>এখানে দ্বিতীয় পণ্যের বিবরণ লিখুন।</p>
+          <div class="product-price">দাম যোগ করুন</div>
+          <a class="button" href="#order" data-product="আপনার দ্বিতীয় পণ্য">অর্ডার করুন</a>
+        </article>
+
+        <!-- Product 3: নিজের পণ্য অনুযায়ী পরিবর্তন করবে -->
+        <article class="product-card">
+          <img
+            src="images/product-placeholder.svg"
+            alt="তৃতীয় পণ্য"
+          >
+          <h3>আপনার তৃতীয় পণ্য</h3>
+          <p>এখানে তৃতীয় পণ্যের বিবরণ লিখুন।</p>
+          <div class="product-price">দাম যোগ করুন</div>
+          <a class="button" href="#order" data-product="আপনার তৃতীয় পণ্য">অর্ডার করুন</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section">
+      <h2 class="section-title">আমাদের কাছ থেকে অর্ডার করুন</h2>
+      <p class="section-subtitle">
+        অর্ডার করার আগে পণ্যের নাম, মূল্য ও বিবরণ যাচাই করুন।
+      </p>
+
+      <div class="features">
+        <div class="feature">
+          <h3>সহজ অর্ডার</h3>
+          <p>নাম, ফোন নম্বর ও ঠিকানা দিয়ে অর্ডার করুন।</p>
+        </div>
+
+        <div class="feature">
+          <h3>পণ্যের বিবরণ</h3>
+          <p>অর্ডারের আগে পণ্যের বিবরণ জেনে নিন।</p>
+        </div>
+
+        <div class="feature">
+          <h3>যোগাযোগ</h3>
+          <p>অর্ডার নিশ্চিত করার জন্য WhatsApp ব্যবহার করুন।</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order form -->
+    <section class="section order-section" id="order">
+      <h2 class="section-title">অর্ডার ফরম</h2>
+      <p class="section-subtitle">
+        নিচে আপনার সঠিক তথ্য দিয়ে অর্ডার পাঠান।
+      </p>
+
+      <form class="order-form" id="orderForm">
+
+        <label for="customerName">আপনার নাম *</label>
+        <input
+          type="text"
+          id="customerName"
+          placeholder="আপনার সম্পূর্ণ নাম"
+          required
+        >
+
+        <label for="phone">মোবাইল নম্বর *</label>
+        <input
+          type="tel"
+          id="phone"
+          placeholder="01XXXXXXXXX"
+          pattern="01[0-9]{9}"
+          title="সঠিক ১১ সংখ্যার বাংলাদেশি মোবাইল নম্বর লিখুন"
+          required
+        >
+
+        <label for="address">সম্পূর্ণ ঠিকানা *</label>
+        <textarea
+          id="address"
+          placeholder="বাসা, গ্রাম/এলাকা, উপজেলা ও জেলা"
+          required
+        ></textarea>
+
+        <label for="product">পণ্য নির্বাচন করুন *</label>
+        <select id="product" required>
+          <option value="সাফা খোরমা" data-price="790">সাফা খোরমা — ৳৭৯০</option>
+          <option value="আপনার দ্বিতীয় পণ্য" data-price="0">আপনার দ্বিতীয় পণ্য — দাম নিশ্চিত করতে হবে</option>
+          <option value="আপনার তৃতীয় পণ্য" data-price="0">আপনার তৃতীয় পণ্য — দাম নিশ্চিত করতে হবে</option>
+        </select>
+
+        <label for="quantity">পরিমাণ *</label>
+        <select id="quantity" required>
+          <option value="1">১ প্যাকেট</option>
+          <option value="2">২ প্যাকেট</option>
+          <option value="3">৩ প্যাকেট</option>
+          <option value="4">৪ প্যাকেট</option>
+          <option value="5">৫ প্যাকেট</option>
+        </select>
+
+        <label for="delivery">ডেলিভারি এলাকা *</label>
+        <select id="delivery" required>
+          <option value="ঢাকার ভিতরে">ঢাকার ভিতরে</option>
+          <option value="ঢাকার বাইরে">ঢাকার বাইরে</option>
+        </select>
+
+        <button type="submit" class="button">
+          WhatsApp-এ অর্ডার পাঠান
+        </button>
+
+        <p class="form-note">
+          বাটনে চাপ দিলে WhatsApp খুলবে। অর্ডার পাঠাতে সেখানে Send চাপুন।
+        </p>
+
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> সাফা খোরমা | সর্বস্বত্ব সংরক্ষিত</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // পণ্যের কার্ডের অর্ডার বাটন থেকে ফরমে পণ্য নির্বাচন
+    document.querySelectorAll("[data-product]").forEach(function(button) {
+      button.addEventListener("click", function() {
+        const productName = this.getAttribute("data-product");
+        const productSelect = document.getElementById("product");
+
+        for (let i = 0; i < productSelect.options.length; i++) {
+          if (productSelect.options[i].value === productName) {
+            productSelect.selectedIndex = i;
+            break;
+          }
+        }
+      });
+    });
+
+    document.getElementById("orderForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("customerName").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const productSelect = document.getElementById("product");
+      const product = productSelect.value;
+      const price = Number(productSelect.options[productSelect.selectedIndex].dataset.price);
+      const quantity = Number(document.getElementById("quantity").value);
+      const delivery = document.getElementById("delivery").value;
+
+      const total = price > 0 ? "৳" + (price * quantity) : "দাম নিশ্চিত করতে হবে";
+
+      const message = [
+        "সাফা খোরমার নতুন অর্ডার",
+        "",
+        "নাম: " + name,
+        "ফোন: " + phone,
+        "ঠিকানা: " + address,
+        "পণ্য: " + product,
+        "পরিমাণ: " + quantity,
+        "পণ্যের মোট মূল্য: " + total,
+        "ডেলিভারি এলাকা: " + delivery,
+        "",
+        "ডেলিভারি চার্জ ও অর্ডার নিশ্চিত করে জানাবেন।"
+      ].join("\n");
+
+      // ব্যবসার WhatsApp নম্বর; বাংলাদেশের নম্বরের শুরুতে 0 বাদ দিয়ে 880 বসাতে হবে।
+      const whatsappNumber = "8801841088731";
+
+      const whatsappUrl =
+        "https://wa.me/" + whatsappNumber +
+        "?text=" + encodeURIComponent(message);
+
+      window.open(whatsappUrl, "_blank");
+    });
+  </script>
+
+</body>
+</html>
