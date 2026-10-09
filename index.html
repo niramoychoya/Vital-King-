@@ -124,7 +124,7 @@ margin:18px 0;
 }
 
 .old-price{
-color:#888;
+color:#e53935;
 text-decoration:line-through;
 font-size:20px;
 }
@@ -750,7 +750,7 @@ function priceMarkup(p) {
   return `
     <span class="old-price">${money(p.oldPrice)}</span>
     <span class="new-price">${money(p.price)}</span>
-    <span class="savings">সাশ্রয় ${money(p.oldPrice - p.price)}</span>
+    <span class="savings">${discountPercent(p)}% OFF</span>
   `;
 }
 
