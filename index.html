@@ -743,7 +743,8 @@ const products = {
     price: 780,
    image: "https://niramoychoya.github.io/Vital-King-/2.jpg",
     description: "সাফা খুরমা। প্যাকেটের প্রকৃত তথ্য, ওজন, উপাদান ও সংরক্ষণের নির্দেশনা দেখে নিন।"
-};
+ }
+ };
 
 function money(n) {
   return "৳" + Number(n).toLocaleString("en-US");
@@ -853,7 +854,7 @@ document.querySelectorAll("[data-order-product]").forEach(b => {
 
 updateTotal();
   
-});
+
 
 document.getElementById("modalOrder").addEventListener("click", () => {
   productSelect.value = modalProductKey;
