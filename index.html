@@ -733,7 +733,7 @@ const products = {
     name: "ভাইটাল কিং",
     oldPrice: 300,
     price: 280,
-    image: ""Product.png"",,
+    image: "Product.png",
     description: "ভাইটাল কিং। প্যাকেটের প্রকৃত তথ্য, ওজন, উপাদান ও সংরক্ষণের নির্দেশনা দেখে নিন।"
   },
 
@@ -827,8 +827,17 @@ function updateTotal() {
     return;
   }
 
-  totalBox.textContent =
-    `পণ্যের মূল্য: ${money(p.price * qty)} + ডেলিভারি: ${money(fee)} = আনুমানিক মোট: ${money(p.price * qty + fee)}`;
+  const price = Number(p.price);
+  const subtotal = price * qty;
+  const grandTotal = subtotal + fee;
+
+  totalBox.innerHTML = `
+    <div>পণ্যের একক মূল্য: ${money(price)}</div>
+    <div>পরিমাণ: ${qty} টি</div>
+    <div>পণ্যের মোট মূল্য: ${money(subtotal)}</div>
+    <div>ডেলিভারি চার্জ: ${money(fee)}</div>
+    <div><strong>সর্বমোট মূল্য: ${money(grandTotal)}</strong></div>
+  `;
 }
 
 [productSelect, quantitySelect, deliverySelect].forEach(el => {
@@ -840,6 +849,10 @@ document.querySelectorAll("[data-order-product]").forEach(b => {
     productSelect.value = b.dataset.orderProduct;
     updateTotal();
   });
+});
+
+updateTotal();
+  
 });
 
 document.getElementById("modalOrder").addEventListener("click", () => {
