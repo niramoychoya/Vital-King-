@@ -52,7 +52,7 @@ font-size:21px;
 .offer-banner a{
 display:inline-block;
 background:#fff;
-color:var(--green);
+color:var(--blue);
 font-weight:700;
 padding:5px 19px;
 border-radius:6px;
@@ -776,7 +776,7 @@ document.querySelectorAll("[data-discount-for]").forEach(el => {
 document.getElementById("heroOldPrice").textContent = money(products.vital.oldPrice);
 document.getElementById("heroNewPrice").textContent = money(products.vital.price);
 document.getElementById("heroSavings").textContent =
-  "সাশ্রয় " + money(products.vital.oldPrice - products.vital.price);
+  discountPercent(products.vital) + "% OFF";
 
 const modal = document.getElementById("productModal");
 let modalProductKey = "vital";
